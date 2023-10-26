@@ -14,18 +14,21 @@ public class JoystickMove : MonoBehaviour
     private Vector2 _direction;
     private float _force;
     private float _distance;
-
-
+    public float slowdown = 0.95f;
+    public float bounceforce = 100f;
+    public bool FUCK;
+    private CircleCollider2D _circleCollider;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        _circleCollider = GetComponent<CircleCollider2D>();
 
     }
     private void FixedUpdate()
     {
-        Debug.Log(combinedValue);
-        
+        Debug.Log(rb.velocity);
 
+       
         horizontalValue = joystick.Horizontal;
         verticalValue = joystick.Vertical;
         combinedValue = joystick.Direction;
@@ -35,26 +38,64 @@ public class JoystickMove : MonoBehaviour
 
         if (combinedValue ==new Vector2(0,0))
         {
-            rb.AddForce(_direction * _force);
+            if (FUCK)
+            {
+                FUCKINGHELL();
+                //FUCK = true;
+            }
+            
+            /*
+            StopAllCoroutines();
+            StartCoroutine(Push());
+            */
         }
         else
         {
-            
             _distance = Vector2.Distance(initialValue, combinedValue);
             _direction = (initialValue - combinedValue).normalized;
-            _force = _distance * 1000;
+            _force = _distance * 1500;
+            
         }
 
+        rb.drag = slowdown;
+        if (rb.velocity != new Vector2(0,0))
+        {
+            FUCK = false;
+        }
+        else if (rb.velocity.x <= 2f && !FUCK && rb.velocity.y <= 2f)
+        {
+            Debug.LogError("Se desactivo!!!!!!!!!!!!!");
+            _circleCollider.isTrigger = true;
+            this.enabled = false;
+            FUCK = true;
+        }
+
+        /*
         if (rb.velocity != new Vector2(0, 0))
         {
             rb.velocity=(initialValue);
             _force = 0;
         }
+        */
+        /* if (combinedValue==initialValue)
+         {
+             rb.AddForce(combinedValue * 2);
+             Debug.Log("equals values");
+         }*/
+    }
 
-       /* if (combinedValue==initialValue)
+    public void FUCKINGHELL()
+    {
+        rb.AddForce(_direction * _force);
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("wall"))
         {
-            rb.AddForce(combinedValue * 2);
-            Debug.Log("equals values");
-        }*/
+            Vector2 normal = collision.contacts[0].normal;
+            rb.AddForce(-normal * bounceforce, ForceMode2D.Impulse);
+        }
     }
 }
