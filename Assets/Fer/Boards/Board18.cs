@@ -41,6 +41,20 @@ public class Board18 : MonoBehaviour
         {
             spriteRenderer.color = Color.red;
         }
+
+        if (collision.CompareTag("CheckA"))
+        {
+            azul18 = true;
+            rojo18 = false;
+            active = true;
+        }
+
+        if (collision.CompareTag("CheckR"))
+        {
+            azul18 = false;
+            rojo18 = true;
+            active = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

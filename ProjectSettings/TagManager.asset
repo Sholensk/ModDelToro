@@ -8,6 +8,8 @@ TagManager:
   - Rojo
   - Tablero1
   - wall
+  - CheckA
+  - CheckR
   layers:
   - Default
   - TransparentFX
