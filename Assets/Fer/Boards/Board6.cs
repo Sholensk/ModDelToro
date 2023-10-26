@@ -5,35 +5,54 @@ public class Board6 : MonoBehaviour
     public bool rojo6 = false;
     public bool azul6 = false;
 
+    [SerializeField] bool active = false;
+
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
         rojo6 = false;
         azul6 = false;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        if (rojo6 == false && azul6 == false)
+        {
+            active = false;
+        }
+
+        else
+        {
+            active = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Azul"))
+        if (collision.CompareTag("Azul") && active == false)
         {
-            azul6 = true;
+            spriteRenderer.color = Color.blue;
         }
 
-        if (collision.CompareTag("Rojo"))
+        if (collision.CompareTag("Rojo") && active == false)
         {
-            rojo6 = true;
+            spriteRenderer.color = Color.red;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Azul"))
+        if (collision.CompareTag("Azul") && active == false)
         {
-            azul6 = false;
+            spriteRenderer.color = Color.white;
         }
 
-        if (collision.CompareTag("Rojo"))
+        if (collision.CompareTag("Rojo") && active == false)
         {
-            rojo6 = false;
+            spriteRenderer.color = Color.white;
         }
     }
 }

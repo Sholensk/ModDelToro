@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Azul
   - Rojo
+  - Tablero1
   layers:
   - Default
   - TransparentFX
