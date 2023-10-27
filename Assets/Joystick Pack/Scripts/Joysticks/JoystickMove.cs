@@ -26,9 +26,6 @@ public class JoystickMove : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Debug.Log(rb.velocity);
-
-       
         horizontalValue = joystick.Horizontal;
         verticalValue = joystick.Vertical;
         combinedValue = joystick.Direction;
