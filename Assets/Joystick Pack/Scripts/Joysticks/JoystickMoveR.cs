@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JoystickMove : MonoBehaviour
+public class JoystickMoveR : MonoBehaviour
 {
-    FixedJoystick joystick;
+    FixedJoystickR joystickR;
     public Rigidbody2D rb;
     public float force;
     public Vector2 combinedValue;
@@ -20,7 +20,7 @@ public class JoystickMove : MonoBehaviour
     private CircleCollider2D _circleCollider;
     private void Start()
     {
-        joystick = FindAnyObjectByType<FixedJoystick>();
+        joystickR = FindAnyObjectByType<FixedJoystickR>();
         rb = GetComponent<Rigidbody2D>();
         _circleCollider = GetComponent<CircleCollider2D>();
     }
@@ -29,9 +29,9 @@ public class JoystickMove : MonoBehaviour
         Debug.Log(rb.velocity);
 
        
-        horizontalValue = joystick.Horizontal;
-        verticalValue = joystick.Vertical;
-        combinedValue = joystick.Direction;
+        horizontalValue = joystickR.Horizontal;
+        verticalValue = joystickR.Vertical;
+        combinedValue = joystickR.Direction;
         /*_distance=Vector2.Distance(initialValue, combinedValue);
         _direction=(initialValue-combinedValue).normalized;
         _force = _distance * 10;*/
