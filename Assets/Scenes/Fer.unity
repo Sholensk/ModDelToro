@@ -3731,15 +3731,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b7f266a5b15c3364287df2282268d09c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -4171,6 +4171,28 @@ MonoBehaviour:
   snapY: 0
   background: {fileID: 1908413354}
   handle: {fileID: 1461980619}
+--- !u!1 &2023716846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8656696456472055464, guid: f4c9d7634d5b5f0438b9702029f44fcf, type: 3}
+  m_PrefabInstance: {fileID: 8656696456677839092}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2023716852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023716846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc66e804f84e5014182398f2f25f183f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  launchSound: {fileID: 8300000, guid: ad5222072136a8f41a683e50a8fe0ba7, type: 3}
+  collisionSound: {fileID: 8300000, guid: 5300a80221b812c4381ae0fa44c2b036, type: 3}
+  slotSound: {fileID: 8300000, guid: 57e951e533f8ba246b7296e6fe6d238f, type: 3}
+  victorySound: {fileID: 8300000, guid: cbd3d31c0de0a2940b391e4b95a6b579, type: 3}
 --- !u!1 &2028261821
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class DragNShoot : MonoBehaviour
     private float _distance;
 
     [SerializeField] private Rigidbody2D _rigidbody;
+    public SoundEffects soundEffects;  // Referencia al script de efectos de sonido
 
     void Update()
     {
@@ -33,4 +34,10 @@ public class DragNShoot : MonoBehaviour
             }
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        soundEffects.PlayCollisionSound();
+    }
 }
+
