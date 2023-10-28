@@ -47,6 +47,7 @@ public class Board9 : MonoBehaviour
             azul9 = true;
             rojo9 = false;
             active = true;
+            spriteRenderer.color = Color.blue;
         }
 
         if (collision.CompareTag("CheckR"))
@@ -54,6 +55,7 @@ public class Board9 : MonoBehaviour
             azul9 = false;
             rojo9 = true;
             active = true;
+            spriteRenderer.color = Color.red;
         }
     }
 

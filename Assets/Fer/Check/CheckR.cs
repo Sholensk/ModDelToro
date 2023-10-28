@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckR : MonoBehaviour
@@ -10,15 +8,16 @@ public class CheckR : MonoBehaviour
 
     void Start()
     {
+        cronometro = 2;
         circleCollider = gameObject.GetComponent<CircleCollider2D>();
     }
 
     void Update()
     {
-        StartCheckA();
+        StartCheckR();
     }
 
-    void StartCheckA()
+    void StartCheckR()
     {
         if (cronometro <= .2)
         {

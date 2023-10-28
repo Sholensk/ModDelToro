@@ -47,6 +47,7 @@ public class Board21 : MonoBehaviour
             azul21 = true;
             rojo21 = false;
             active = true;
+            spriteRenderer.color = Color.blue;
         }
 
         if (collision.CompareTag("CheckR"))
@@ -54,6 +55,7 @@ public class Board21 : MonoBehaviour
             azul21 = false;
             rojo21 = true;
             active = true;
+            spriteRenderer.color = Color.red;
         }
     }
 

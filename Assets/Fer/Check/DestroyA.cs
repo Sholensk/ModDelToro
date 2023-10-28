@@ -2,18 +2,16 @@ using UnityEngine;
 
 public class DestroyA : MonoBehaviour
 {
-    CircleCollider2D circleCollider;
+    public CheckA checkA;
 
-    CheckA checkA;
-    void Start()
+    private void Awake()
     {
-        circleCollider = GetComponent<CircleCollider2D>();
         checkA = FindFirstObjectByType<CheckA>();
     }
 
-    void Update()
+    private void Update()
     {
-        if(checkA.cronometro <= 0)
+        if (checkA.cronometro <= 0)
         {
             Destroy(this.gameObject);
         }

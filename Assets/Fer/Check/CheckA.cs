@@ -6,30 +6,27 @@ public class CheckA : MonoBehaviour
 
     CircleCollider2D circleCollider;
 
-    BoardEnter boardEnter;
-
-    void Start()
+    void Awake()
     {
         cronometro = 2;
-        boardEnter = FindAnyObjectByType<BoardEnter>();
         circleCollider = gameObject.GetComponent<CircleCollider2D>();
     }
 
     void Update()
     {
         StartCheckA();
-
-        if(cronometro <= 0)
-        {
-            boardEnter.Entro = false;
-        }
     }
 
     void StartCheckA()
     {
-        if(cronometro <= .2)
+        if (cronometro <= .2)
         {
             circleCollider.enabled = true;
+        }
+
+        if (cronometro <= .1)
+        {
+            circleCollider.enabled = false;
         }
     }
 }
