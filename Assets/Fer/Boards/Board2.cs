@@ -8,6 +8,7 @@ public class Board2 : MonoBehaviour
     [SerializeField] bool active = false;
 
     private SpriteRenderer spriteRenderer;
+    public SoundEffects soundEffects;
 
     void Start()
     {
@@ -48,6 +49,7 @@ public class Board2 : MonoBehaviour
             rojo2 = false;
             active = true;
             spriteRenderer.color = Color.blue;
+            soundEffects.PlaySlotSound();
         }
 
         if (collision.CompareTag("CheckR"))
@@ -56,6 +58,7 @@ public class Board2 : MonoBehaviour
             rojo2 = true;
             active = true;
             spriteRenderer.color = Color.red;
+            soundEffects.PlaySlotSound();
         }
     }
 
