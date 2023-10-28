@@ -7,5 +7,6 @@ public class Play : MonoBehaviour
     {
         SceneManager.LoadScene(Scene);
     }
+
 }
 
