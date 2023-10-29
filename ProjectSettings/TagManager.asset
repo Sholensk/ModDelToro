@@ -10,6 +10,7 @@ TagManager:
   - wall
   - CheckA
   - CheckR
+  - Opciones
   layers:
   - Default
   - TransparentFX
