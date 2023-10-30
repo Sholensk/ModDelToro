@@ -84,11 +84,11 @@ public class BoardManager : MonoBehaviour
 
         if (azulWin == true)
         {
-            
-            azulpanel.SetActive(true);
-            StartCoroutine(DesactivarPanel());
-            contadorvictoriasazul += 1.0f;
-            Debug.Log(contadorvictoriasazul);
+            SceneManager.LoadScene("VictoriaAzul");
+        }
+        if (rojoWin == true)
+        {
+            SceneManager.LoadScene("VictoriaRoja");
         }
     }
 

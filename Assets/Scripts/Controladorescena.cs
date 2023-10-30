@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Controladorescena : MonoBehaviour
 {
-    public PantallaOpciones panelOpciones;
+    /*public PantallaOpciones panelOpciones;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +15,5 @@ public class Controladorescena : MonoBehaviour
     void Update()
     {
         
-    }
+    }*/
 }
