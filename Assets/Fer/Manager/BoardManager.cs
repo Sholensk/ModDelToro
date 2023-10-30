@@ -1,9 +1,17 @@
+using System.Collections;
+using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BoardManager : MonoBehaviour
 {
     public bool azulWin = false;
     public bool rojoWin = false;
+    public GameObject azulpanel;
+    public GameObject rojoPanel;
+    public float tiempopanel;
+    public float contadorvictoriasazul = 0f;
+    public float contadorvictoriasrojo = 0f;
 
     Board1 board1;
     Board2 board2;
@@ -59,6 +67,8 @@ public class BoardManager : MonoBehaviour
         board23 = FindFirstObjectByType<Board23>();
         board24 = FindFirstObjectByType<Board24>();
         board25 = FindFirstObjectByType<Board25>();
+
+        
     }
 
     void Update()
@@ -71,6 +81,15 @@ public class BoardManager : MonoBehaviour
         LeftRightWinRed();
         RightLeftWinBlue();
         RightLeftWinRed();
+
+        if (azulWin == true)
+        {
+            
+            azulpanel.SetActive(true);
+            StartCoroutine(DesactivarPanel());
+            contadorvictoriasazul += 1.0f;
+            Debug.Log(contadorvictoriasazul);
+        }
     }
 
     void HorizontalWinBlue()
@@ -375,5 +394,12 @@ public class BoardManager : MonoBehaviour
         {
             rojoWin = true;
         }
+    }
+    
+    private IEnumerator DesactivarPanel()
+    {
+            yield return new WaitForSeconds(tiempopanel);
+            azulpanel.SetActive(false);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);     
     }
 }
