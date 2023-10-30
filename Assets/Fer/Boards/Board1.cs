@@ -49,7 +49,8 @@ public class Board1 : MonoBehaviour
             rojo1 = false;
             active = true;
             spriteRenderer.color = Color.blue;
-            soundEffects.PlaySlotSound();
+            //soundEffects.PlaySlotSound();
+            GameObject.FindGameObjectWithTag("Azul").GetComponent<SoundEffects>().PlaySlotSound();
         }
 
         if (collision.CompareTag("CheckR"))
@@ -58,7 +59,8 @@ public class Board1 : MonoBehaviour
             rojo1 = true;
             active = true;
             spriteRenderer.color = Color.red;
-            soundEffects.PlaySlotSound();
+            //soundEffects.PlaySlotSound();
+            GameObject.FindGameObjectWithTag("Azul").GetComponent<SoundEffects>().PlaySlotSound();
         }
     }
 

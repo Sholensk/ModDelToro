@@ -37,10 +37,10 @@ public class DragNShoot : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Asumiendo que todas las casillas tienen una etiqueta "Casilla"
+        
         if (collision.gameObject.CompareTag("Tablero1"))
         {
-            soundEffects.PlaySlotSound();
+            GameObject.FindGameObjectWithTag("Azul").GetComponent<SoundEffects>().PlaySlotSound();
         }
     }
 }
