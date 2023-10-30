@@ -352,7 +352,7 @@ public class BoardManager : MonoBehaviour
 
     void RightLeftWinBlue()
     {
-        if (board10.rojo10 == true && board14.rojo14 == true && board18.rojo18 == true && board22.rojo22 == true)
+        if (board10.azul10 == true && board14.azul14 == true && board18.azul18 == true && board22.azul22 == true)
         {
             azulWin = true;
         }
@@ -394,12 +394,5 @@ public class BoardManager : MonoBehaviour
         {
             rojoWin = true;
         }
-    }
-    
-    private IEnumerator DesactivarPanel()
-    {
-            yield return new WaitForSeconds(tiempopanel);
-            azulpanel.SetActive(false);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);     
     }
 }

@@ -17,7 +17,7 @@ public class CheckR : MonoBehaviour
         StartCheckR();
     }
 
-    void StartCheckR()
+    public void StartCheckR()
     {
         if (cronometro <= .2)
         {

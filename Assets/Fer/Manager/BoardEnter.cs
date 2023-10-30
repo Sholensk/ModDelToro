@@ -46,7 +46,7 @@ public class BoardEnter : MonoBehaviour
 
     void Update()
     {
-        if (Entro == true)
+        if (Entro == true || offCheck.outA)
         {
             checkA.cronometro -= Time.deltaTime;
 
@@ -54,12 +54,14 @@ public class BoardEnter : MonoBehaviour
             {
                 checkA.cronometro = 2;
                 Entro = false;
+                offCheck.outA = false;
                 Instantiate(FichaA, Position, Rotation, Parent);
+                checkA = FindObjectOfType<CheckA>();
                 break;
             }
         }
 
-        if (EntroR == true)
+        if (EntroR == true || offCheck.outR)
         {
             checkR.cronometro -= Time.deltaTime;
 
@@ -67,7 +69,9 @@ public class BoardEnter : MonoBehaviour
             {
                 checkR.cronometro = 2;
                 EntroR = false;
+                offCheck.outR = false;
                 Instantiate(FichaR, PositionR, RotationR, ParentR);
+                checkR = FindObjectOfType<CheckR>();
                 break;
             }
         }

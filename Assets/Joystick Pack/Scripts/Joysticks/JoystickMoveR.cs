@@ -50,7 +50,7 @@ public class JoystickMoveR : MonoBehaviour
         {
             _distance = Vector2.Distance(initialValue, combinedValue);
             _direction = (initialValue - combinedValue).normalized;
-            _force = _distance * 1500;
+            _force = _distance * 2000;
             
         }
 

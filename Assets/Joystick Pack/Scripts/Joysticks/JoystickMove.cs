@@ -50,7 +50,7 @@ public class JoystickMove : MonoBehaviour
         {
             _distance = Vector2.Distance(initialValue, combinedValue);
             _direction = (initialValue - combinedValue).normalized;
-            _force = _distance * 1500;
+            _force = _distance * 2000;
             
         }
 
@@ -61,7 +61,7 @@ public class JoystickMove : MonoBehaviour
         }
         else if (rb.velocity.x <= 2f && !FUCK && rb.velocity.y <= 2f)
         {
-            Debug.LogError("Se desactivo!!!!!!!!!!!!!");
+            //Debug.LogError("Se desactivo!!!!!!!!!!!!!");
             _circleCollider.isTrigger = true;
             this.enabled = false;
             FUCK = true;
