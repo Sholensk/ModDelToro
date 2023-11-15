@@ -55,7 +55,7 @@ public class Board25 : MonoBehaviour
             azul25 = false;
             rojo25 = true;
             active = true;
-            spriteRenderer.color = Color.blue;
+            spriteRenderer.color = Color.red;
         }
     }
 
