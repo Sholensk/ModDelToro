@@ -34,12 +34,14 @@ public class Board8 : MonoBehaviour
     {
         if (collision.CompareTag("Azul") && active == false)
         {
-            spriteRenderer.color = Color.blue;
+            Color amarillo = new Color(0.9568f, 0.9960785f, 0.3098039f, 1f);
+            spriteRenderer.color = amarillo;
         }
 
         if (collision.CompareTag("Rojo") && active == false)
         {
-            spriteRenderer.color = Color.red;
+            Color morado = new Color(.5647f, .2f, .5019f, 1f);
+            spriteRenderer.color = morado;
         }
 
         if (collision.CompareTag("CheckA"))
@@ -47,7 +49,8 @@ public class Board8 : MonoBehaviour
             azul8 = true;
             rojo8 = false;
             active = true;
-            spriteRenderer.color = Color.blue;
+            Color amarillo = new Color(0.9568f, 0.9960785f, 0.3098039f, 1f);
+            spriteRenderer.color = amarillo;
         }
 
         if (collision.CompareTag("CheckR"))
@@ -55,7 +58,8 @@ public class Board8 : MonoBehaviour
             azul8 = false;
             rojo8 = true;
             active = true;
-            spriteRenderer.color = Color.red;
+            Color morado = new Color(.5647f, .2f, .5019f, 1f);
+            spriteRenderer.color = morado;
         }
     }
 
@@ -63,12 +67,14 @@ public class Board8 : MonoBehaviour
     {
         if (collision.CompareTag("Azul") && active == false)
         {
-            spriteRenderer.color = Color.white;
+            Color white = new Color(1f, 1f, 1f, 0f);
+            spriteRenderer.color = white;
         }
 
         if (collision.CompareTag("Rojo") && active == false)
         {
-            spriteRenderer.color = Color.white;
+            Color white = new Color(1f, 1f, 1f, 0f);
+            spriteRenderer.color = white;
         }
     }
 }

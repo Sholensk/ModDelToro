@@ -12,6 +12,7 @@ public class BoardManager : MonoBehaviour
     public float tiempopanel;
     public float contadorvictoriasazul = 0f;
     public float contadorvictoriasrojo = 0f;
+    public float timer = 0;
 
     Board1 board1;
     Board2 board2;
@@ -84,11 +85,23 @@ public class BoardManager : MonoBehaviour
 
         if (azulWin == true)
         {
-            SceneManager.LoadScene("VictoriaAzul");
+
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                SceneManager.LoadScene("VictoriaAzul");
+            }
+            
         }
         if (rojoWin == true)
         {
-            SceneManager.LoadScene("VictoriaRoja");
+
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                SceneManager.LoadScene("VictoriaRoja");
+            }
+            
         }
     }
 
